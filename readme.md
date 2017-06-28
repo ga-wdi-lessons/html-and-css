@@ -6,8 +6,8 @@
 - Identify the parts of an HTML element
 - Distinguish in-line styles, style tags, and linked style sheets
 - Break down the syntax of a CSS declatation and a CSS rule(set)
+- List commonly used properties
 - Distinguish the components of the box model
-- Practice
 
 ## Overview (5 minutes / 0:05)
 
@@ -339,31 +339,294 @@ Especially interesting are [pseudo class selectors](https://developer.mozilla.or
 
 ## Declaration (5 minutes / 2:25)
 
-### Property
-- There are tons of properties
-- Again we're looking for 20% that gets us 80% of the way
-  - color
-  - background
-  - font-size
-  - line-height
-  - align
-  - layout properties (box model)
+A declaration has two parts, a property and a value to which that property should be set.
+In the example above, the property is `color` and the property value is `red`.
+There must be a colon seperating each propery from its property value and a semicolon at the end of the declaration.
+By adding just that rule to our CSS and refreshing the page in the browser, we can see the effect of the rule (though you have to scroll past the massive image -- we'll fix that shortly).
 
-### Property Value
+### Property
+
+Like HTML elements, there are tons of css properties and it is impractical to memorize them.
+Again we're looking for the 20% that gets us 80% of the way.
+
+
+#### [Background](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+
+There is a ton we can do with the background of a page but for now we'll keep it simple with just an off white.
+Generally we will use a  [**hex-triplet**](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet) to describe colors.
+
+In `style.css` add the rule:
+
+
+```css
+body {
+  background: #F5F5F5;
+}
+```
+
+**BONUS** just adding textures to a sites background can make a huge difference as well.
+A great resource for free patterns is [Transparent Textures](https://www.transparenttextures.com/)
+
+#### [Text](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+
+##### [Color](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
+
+The color property sets the color of text.
+An easy improvement to the default styling is to set the text color to something just off black.
+For off black, we will use `#444`.
+
+In `style.css` add the declaration to the body rule:
+
+```css
+body {
+  color: #444;
+  background: #F5F5F5;
+}
+```
+
+##### [Font Family](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Font_families)
+
+An less subtle change we can easily make is to use a font other than the default `Times`.
+
+See below for details on brining in custom fonts from Google Fonts.
+For now we'll just use some of the **web safe fonts** which are available by default in most every browser. The web safe fonts are:
+
+- Arial (sans-serif)
+- Courier New (monospace)
+- Georgia (serif)
+- Times New Roman (serif)
+- Trebuchet MS (sans-serif)
+- Verdana (sans-serif)
+
+Because there can be problems loading fonts, we provide the `font-family` property fallbacks in a comma seperated list.
+Also note that fonts with a space in their name need to be surrounded in quotation marks.
+
+Let's add a declaration to the rule on body setting the font-family to a sans-serif font:
+
+```css
+body {
+  color: #444;
+  background: #F5F5F5;
+  font-family: Helvetica, Arial, sans-serif;
+}
+```
+Notice the lower-case, dash deliminated property (sometimes called spine-case) naming convention for multi-word properties.
+
+Let's also add a new ruleset that just applies to the `h1` and give that a monospaced font.
+
+```css
+h1 {
+  font-family: "Courier New", Courier, monospace;
+}
+```
+
+##### [Font size](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Font_size)
+
+A very common mistake is to use a header with a larger number (e.g. `h4`) for the smaller font.
+This is bad practice.
+Instead we want to use the heading with the appropriate meaning and then style appropriately.
+
+Let's use a slightly smaller font for our h1 than the default `32px`:
+
+```css
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 24px;
+}
+```
+
+**Bonus** there's a lot more you can do with [Font styling](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Font_style_font_weight_text_transform_and_text_decoration)
+
+For more detail on units of measurement in CSS check out [this Values and Units guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
+
+##### Text Layout
+
+###### [Text Alignment](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Text_alignment)
+
+Next we'll center our heading by adding a declaration setting the `text-align` value:
+
+```css
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 24px;
+  text-align: center;
+}
+```
+
+Keep in mind the text-align property will only work on text.
+We will cover layout of other elements below in the discussion of the box model.
+
+##### [Line Height](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Line_height)
+
+The line height property sets the size of each line.
+The propery value accepts any unit but is frequently seen without a unit meaning relative to the size of the font (i.e. `2` is double spaced, `1.5` is one and a half)
+
+The default line height of `1` is a little squished.
+Let's up that to `1.2` by adding a declaration to the `body` rule:
+
+```css
+body {
+  color: #444;
+  background: #F5F5F5;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+}
+```
+
+**BONUS** Similar to line-height, the [word-spacing and letter-spacing](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Letter_and_word_spacing) properties can be used to adjust space around text.
+
+To clearly see the effect of the line-height change we need to scroll past the massive image which is annoying.
+Before we fix the huge image, we should review how elements relate to space with the **box model**
 
 ## Box Model (5 minutes / 2:30)
+
+The browser represents HTML elements on the page as blocks.
+Every block on the page has `width`, `height`, `padding`, `margin`, and `border` properties.
+This diagram shows how these values relate to one another.
+
 ![Box Model](https://upload.wikimedia.org/wikipedia/commons/5/53/Css_box_model.svg)
-- display
-- width and height
-- padding
-- margin
-- border
 
-## Fonts (Bonus)
+We can see the box for an element on our page by right-clicking the element and clicking **inspect**.
+Then find the **Styles** window, and scroll to the bottom.
 
+We'll start with a new rule for images:
 
-## Style Learning HTML and CSS page
-- 10 minutes / 5 review
+```css
+img {
+  height: 75px;
+}
+```
+
+### Centering Elements
+
+One thing to note is that by default, images are **inline element** meaning they only take up as much space as they need.
+
+This is as opposed to **block level** elements which get their own line and take up as much space as is available to them.
+
+To see this inline behavior we can duplicate the image and we will see it repeat left to right.
+
+```html
+<img src="html5logo.png" >
+<img src="html5logo.png" >
+<img src="html5logo.png" >
+<img src="html5logo.png" >
+<img src="html5logo.png" >
+<img src="html5logo.png" >
+```
+
+In order to center the image, we want to first make it a **block level** element by setting the `display` property to `block`
+
+```css
+img {
+  height: 75px;
+  display: block;
+}
+```
+
+We now want to tell the block element that it should allocate extra space evenly between its margins:
+
+```css
+img {
+  height: 75px;
+  display: block;
+  margin: 0 auto;
+}
+```
+
+Much better!
+
+### Border and Padding
+
+Let's use a margin, border, and padding to give the body a frame.
+
+First we'll add a rule setting a dark grey background color for the `html` element.
+This will be the backdrop to our frame.
+
+```css
+html {
+  background: #222;
+}
+```
+We immidiately see the dark grey around the edges of the body.
+This is because body by default has margins of 8px.
+We can increase this using the same margin property we use on the `img`.
+
+```css
+body {
+  color: #444;
+  background: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png"), #F5F5F5;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  margin: 40px 60px;
+}
+```
+
+Now let's add a border to the body:
+
+```css
+body {
+  color: #444;
+  background: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png"), #F5F5F5;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  margin: 40px 60px;
+  border: 5px solid skyblue;
+}
+```
+
+Checking out the result in the browser, the border is a bit heavy and the color is a bit odd.
+Let's use the Dev Tools to tweak this until it looks right.
+
+We then update the value of the border property with the one we settled on:
+
+```css
+body {
+  color: #444;
+  background: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png"), #F5F5F5;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  margin: 40px 60px;
+  border: 3px solid #e44d26;
+}
+```
+
+Now that we have a border on the body, the last thing we want to address is the contained texted jammed into the border.
+The `padding` property is similar to the `margin` but instead of defining the space between the border and the next element, it defines the space between the border and the elements content.
+
+We add padding to the body as follows:
+
+```css
+body {
+  color: #444;
+  background: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png"), #F5F5F5;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  margin: 40px 60px;
+  border: 3px solid #e44d26;
+  padding: 25px 30px;
+}
+```
+
+Note: In this case we used the body as a visual container.
+Frequently we will want more sub-containers for visual purposes.
+The generic block element used for these purposes is the `div`.
+We'll see more `div`s when we talk about using flex-box for advanced alignment.
+
+There are many many more CSS properties and nearly no limit to what CSS will let us do but these building blocks will take us a very long way. Check out the significant difference just these 25 lines (14 declarions) of CSS have made.
+
+The best place to go from here is to practice.
+The following exercises and homework will be great for this but starting with your own wireframes, then building out the HTML and then adding CSS to create something totally new will be the best practice.
+
+## Importing Fonts (Bonus)
+
+Google hosts a massive repository of fonts that can be imported for use on your page.
+
+To add a font:
+1. Go to [Google Fonts](https://fonts.google.com/)
+2. Click the **+** button next to any font you want to import to your page (as a rule, any more than 3 fonts in a project quickly begins to look disjointed).
+3. After selecting 1 or more fonts, click the bar on the bottom that says **1 Family Selected**.
+4. Add the provided link element (something like `<link href="https://fonts.googleapis.com/css?family=Fresca" rel="stylesheet">`) to the head of your HTML.
+5. Add the provided declaration (something like `font-family: 'Fresca', sans-serif;`) to a CSS rule targeting the elements to which you would like to apply the font.
 
 ## [Hippie Portfolio](https://github.com/ga-wdi-exercises/hippy-portfolio)
 
