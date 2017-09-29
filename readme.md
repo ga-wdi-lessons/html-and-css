@@ -131,7 +131,7 @@ Other examples of metadata include links to external stylesheets (more later) an
 
 The `body` element contains the information actually presented to the user; it represents the content of the document.
 
-### Valid HTML in a file: We Do (20 minutes / 0:40)
+### Valid HTML in a file: We Do (20 minutes / 0:50)
 
 Before we start adding content to the body lets create a file locally for our work so we can open it.
 
