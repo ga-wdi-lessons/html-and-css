@@ -2,8 +2,8 @@
 
 ## Learning Objectives
 - Review the roles of HTML and CSS in web pages
-- Identify the parts and roles of HTML boiler plate
 - Identify the parts of an HTML element
+- Identify the parts and roles of HTML boiler plate
 - Distinguish in-line styles, style tags, and linked style sheets
 - Break down the syntax of a CSS declaration and a CSS rule(set)
 - List commonly used properties
@@ -14,6 +14,9 @@
 This lesson will be a refresher on the fundamentals of HTML and CSS.
 All material is review from the pre-work and so will move quickly and potentially glosses over material.
 For a much more robust treatment, please see [the Mozilla Developer Network Learning Area](https://developer.mozilla.org/en-US/docs/Learn).
+
+What are the main 3 languages that are used to create a web page?  
+What are their general functions?
 
 ## HTML (Hyper Text Markup Language) (5 minutes / 0:10)
 
