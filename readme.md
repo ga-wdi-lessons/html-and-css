@@ -15,8 +15,8 @@ This lesson will be a refresher on the fundamentals of HTML and CSS.
 All material is review from the pre-work and so will move quickly and potentially glosses over material.
 For a much more robust treatment, please see [the Mozilla Developer Network Learning Area](https://developer.mozilla.org/en-US/docs/Learn).
 
-What are the main 3 languages that are used to create a web page?  
-What are their general functions?
+- What are the main 3 languages that are used to create a web page?  
+- What are their general roles in how a webpage displays information?
 
 ## HTML (Hyper Text Markup Language) (5 minutes / 0:10)
 
@@ -84,7 +84,7 @@ Browsers are extremely accommodating and so will likely display something but th
 Because the browser can be uninformatively accommodating, we want to double check our work with an [HTML validator](https://validator.w3.org/).
 Even our valid example above (with the anchor tag) won't validate just yet as we are missing some required boiler plate.
 
-### HTML Boilerplate (20 minutes / 0:40)
+### HTML Boilerplate (10 minutes / 0:30)
 
 When a client's browser gets an HTML file from the server, it begins building a document that will be displayed to the user.
 
@@ -131,7 +131,7 @@ Other examples of metadata include links to external stylesheets (more later) an
 
 The `body` element contains the information actually presented to the user; it represents the content of the document.
 
-### Valid HTML in a file: We Do (10 minutes / 0:50)
+### Valid HTML in a file: We Do (20 minutes / 0:40)
 
 Before we start adding content to the body lets create a file locally for our work so we can open it.
 
@@ -152,7 +152,6 @@ atom .
 
 Note: All code for this lesson is available in [this repo](https://github.com/ga-wdi-exercises/html-css-in-class/tree/master) with branches for each step.
 
-In `index.html` type `html` and hit **tab**.
 You will see the same boilerplate from above.
 
 Add the paragraph we used as an example to the page body and give the page a title.
