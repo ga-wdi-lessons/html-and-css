@@ -2,10 +2,10 @@
 
 ## Learning Objectives
 - Review the roles of HTML and CSS in web pages
-- Identify the parts and roles of HTML boiler plate
 - Identify the parts of an HTML element
+- Identify the parts and roles of HTML boiler plate
 - Distinguish in-line styles, style tags, and linked style sheets
-- Break down the syntax of a CSS declatation and a CSS rule(set)
+- Break down the syntax of a CSS declaration and a CSS rule(set)
 - List commonly used properties
 - Distinguish the components of the box model
 
@@ -15,6 +15,9 @@ This lesson will be a refresher on the fundamentals of HTML and CSS.
 All material is review from the pre-work and so will move quickly and potentially glosses over material.
 For a much more robust treatment, please see [the Mozilla Developer Network Learning Area](https://developer.mozilla.org/en-US/docs/Learn).
 
+- What are the main 3 languages that are used to create a web page?  
+- What are their general roles in how a webpage displays information?
+
 ## HTML (Hyper Text Markup Language) (5 minutes / 0:10)
 
 HTML exists to solve the problem of how a rich document can be expressed in plain text.
@@ -22,7 +25,7 @@ That is to say what are the parts of the document, what role does each part serv
 
 HTML expresses the **structure and semantics** of a document in plain text.
 
-### Elements (10 minutes / 0:20)
+### Elements: I do (10 minutes / 0:20)
 
 ![Parts of an Element](https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png)
 
@@ -42,10 +45,10 @@ For example, we can take a paragraph:
 <p>The easiest way to learn HTML is to use it!</p>
 ```
 
-and we can empasize part of the text using `em` tags:
+and we can emphasize part of the text using `em` tags:
 
 ```html
-<p>The easiest way to learn HTML </em>is to use it!</em></p>
+<p>The easiest way to learn HTML <em>is to use it!</em></p>
 ```
 
 We can add a link to the word `HTML` that goes to the MDN HTML page (https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -58,14 +61,14 @@ We can add a link to the word `HTML` that goes to the MDN HTML page (https://dev
 </p>
 ```
 
-Notice the use of whitespace (linebreaks and indentation) here.
+Notice the use of whitespace (line-breaks and indentation) here.
 Any amount of whitespace is understood as a single space to the browser which lets us spread our content out for readability.
 
-An element can be the child of another element (contained within its parent's tags) but can never strattle another element.
+An element can be the child of another element (contained within its parent's tags) but can never straddle another element.
 
 ```html
 <!-- Don't do this! -->
-<p>The easiest way to learn HTML </em>is to use it!</p></em>
+<p>The easiest way to learn HTML <em>is to use it!</p></em>
 ```
 
 Similarly, do not omit closing tags.
@@ -73,15 +76,15 @@ Every element needs a closing tag (with the exception of **empty elements** whic
 
 ```html
 <!-- Also, don't do this! -->
-<p>The easiest way to learn HTML </em>is to use it!</em>
+<p>The easiest way to learn HTML <em>is to use it!</em>
 ```
 
-Browsers are extremely accomidating and so will likely display something but this behavior can't and shouldn't be depended upon.
+Browsers are extremely accommodating and so will likely display something but this behavior can't and shouldn't be depended upon.
 
-Because the browser can be uninformatively accomidating, we want to double check our work with an [HTML validator](https://validator.w3.org/).
+Because the browser can be uninformatively accommodating, we want to double check our work with an [HTML validator](https://validator.w3.org/).
 Even our valid example above (with the anchor tag) won't validate just yet as we are missing some required boiler plate.
 
-### HTML Boilerplate (20 minutes / 0:40)
+### HTML Boilerplate (10 minutes / 0:30)
 
 When a client's browser gets an HTML file from the server, it begins building a document that will be displayed to the user.
 
@@ -128,9 +131,9 @@ Other examples of metadata include links to external stylesheets (more later) an
 
 The `body` element contains the information actually presented to the user; it represents the content of the document.
 
-### Valid HTML in a file (10 minutes / 0:50)
+### Valid HTML in a file: We Do (20 minutes / 0:50)
 
-Before we start adding content to the body lets create a file localy for our work so we can open it.
+Before we start adding content to the body lets create a file locally for our work so we can open it.
 
 Create a directory in you sandbox called `html-and-css`
 
@@ -149,7 +152,6 @@ atom .
 
 Note: All code for this lesson is available in [this repo](https://github.com/ga-wdi-exercises/html-css-in-class/tree/master) with branches for each step.
 
-In `index.html` type `html` and hit **tab**.
 You will see the same boilerplate from above.
 
 Add the paragraph we used as an example to the page body and give the page a title.
@@ -188,15 +190,17 @@ Wow!
 Super dull!
 We'll work on making this more lively shortly but first some practice fixing invalid HTML.
 
-#### Exercise: [HTML Fixit](https://github.com/ga-wdi-exercises/html_fixit) (15 minutes / 1:05)
+#### Exercise: You Do [HTML Fixit](https://git.generalassemb.ly/ga-wdi-exercises/html_fixit) (15 minutes / 1:05)
 
 - 10 minutes working / 5 minutes review
 - Work with a partner and write out plain English answers
 - If you finish early, add additional HTML trying to provoke various error messages
 
-### More Elements (20 minutes / 1:25)
+## Break (10 mins)
 
-There are tons of different HTML elements and memorizing them is impracticle.
+### More Elements (15 minutes / 1:30)
+
+There are tons of different HTML elements and memorizing them is impractical.
 Instead, it is better to start using the 20 percent of the building blocks that get you 80 percent of the way there.
 Among these are headings, paragraphs, lists, and images.
 
@@ -245,7 +249,7 @@ There are two types of HTML lists, ordered and unordered.
 If there's anything people like more than lists, it's pictures.
 
 Pictures are **empty elements** meaning that they cannot logically have children and so are represented in HTML with a single, self-closing element.
-Some people put a slash at the end of empty elements but it is unecessary.
+Some people put a slash at the end of empty elements but it is unnecessary.
 
 ```html
 <img src="" alt="" />
@@ -262,19 +266,19 @@ I've gone with `html5logo.png`.
 
 ![HTML5 Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png)
 
-Move the file from your Downloads folder to the `css-and-html` directory.
+Move the file from your Downloads folder to the `html-and-css` directory.
 
 ```bash
-mv ~/Downloads/html5logo.png ~/wdi/sandbox/css-and-html/
+mv ~/Downloads/html5logo.png ~/wdi/sandbox/html-and-css/
 ```
 
 We tell the browser to request an image and load it into the page by giving an image tag's source attribute a path to the image.
 
 ```html
-<img src="html5logo.png" al="html5 logo" >
+<img src="html5logo.png" alt="html5 logo" >
 ```
 
-### Wire Framing (5 minutes / 1:30)
+### Wire Framing: I do (5 minutes / 1:35)
 
 It is good practice to sketch up an approximation of what you'd like your end product to look like.
 It's alright if it's a rough approximation.
@@ -288,7 +292,7 @@ The text and links:
 Good Strategies
 ===============
 Imitation
-Repition
+Repetition
 Inspection
 Reflection
 
@@ -299,27 +303,35 @@ MDN list of inline HTML elements (https://developer.mozilla.org/en-US/docs/Web/H
 MDN list of block level HTML elements (https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
 ```
 
-### Build Out Wireframe (10 minutes / 1:40)
+### Build Out Wireframe: You do (10 minutes / 1:45)
 
 - 5 minutes working / 5 minutes discussing
 - [Solution](https://github.com/ga-wdi-exercises/html-css-in-class/blob/add-content/index.html)
 
-## Break (10 minutes / 1:50)
+----------------------Note: Timing is off, need to update total times-------------
+
+## Break (5 minutes / 1:30)
 
 ## CSS (Cascading Style Sheets)
 
 We use CSS to tell browsers how we would like for them to **paint** or display the elements of our document.
 
-### Websites without CSS (5 minutes / 1:55)
+### Websites without CSS (5 minutes / 1:35)
 
-### CSS File (5 minutes / 2:00)
+So far the website we've created together has no CSS and is a little plain.  Let's look at some websites and take away their CSS and see how dull and plain they become.  Note that the content will still be the same, just the *styling* will be different.  
 
-To get started writting styles we will create a new file.
+- Now lets checkout [CSS Zen Garden](http://www.csszengarden.com) to see some examples of the great power and diversity that CSS can have on a website.  
+
+>notice, you can use the web developer tools chrome add on to take away all css on a site
+
+### CSS File: We do (5 minutes / 2:00)
+
+To get started writing styles we will create a new file.
 
 ```bash
-touch ~/wdi/sandbox/css-and-html/style.css
+touch ~/wdi/sandbox/html-and-css/style.css
 ```
-> notice, this is an absolute path, if you're in the `css-and-html` directory you can just `touch style.css`
+> notice, this is an absolute path, if you're in the `html-and-css` directory you can just `touch style.css`
 
 Then we will add a line to our HTML linking the stylesheet.
 
@@ -354,14 +366,14 @@ Selectors can be combined and related and there are many more types of [selector
 
 **Bonus** Especially interesting are [pseudo class selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements).
 
-### Exercise: [CSS Diner](http://flukeout.github.io/)
+### Exercise: You do [CSS Diner](http://flukeout.github.io/)
 - 7 minutes working / 3 minutes review
 
 ## Declaration (5 minutes / 2:25)
 
 A declaration has two parts, a property and a value to which that property should be set.
 In the example above, the property is `color` and the property value is `red`.
-There must be a colon seperating each propery from its property value and a semicolon at the end of the declaration.
+There must be a colon separating each property from its property value and a semicolon at the end of the declaration.
 By adding just that rule to our CSS and refreshing the page in the browser, we can see the effect of the rule (though you have to scroll past the massive image -- we'll fix that shortly).
 
 ### Properties
@@ -419,7 +431,7 @@ For now we'll just use some of the **web safe fonts** which are available by def
 - Trebuchet MS (sans-serif)
 - Verdana (sans-serif)
 
-Because there can be problems loading fonts, we provide the `font-family` property fallbacks in a comma seperated list.
+Because there can be problems loading fonts, we provide the `font-family` property fallbacks in a comma separated list.
 Also note that fonts with a space in their name need to be surrounded in quotation marks.
 
 Let's add a declaration to the rule on body setting the font-family to a sans-serif font:
@@ -480,7 +492,7 @@ We will cover layout of other elements below in the discussion of the box model.
 ##### [Line Height](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Line_height)
 
 The line height property sets the size of each line.
-The propery value accepts any unit but is frequently seen without a unit meaning relative to the size of the font (i.e. `2` is double spaced, `1.5` is one and a half)
+The property value accepts any unit but is frequently seen without a unit meaning relative to the size of the font (i.e. `2` is double spaced, `1.5` is one and a half)
 
 The default line height of `1` is a little squished.
 Let's up that to `1.2` by adding a declaration to the `body` rule:
@@ -501,7 +513,7 @@ When we need more text than we have, we can use [Lorem Ipsum](http://www.lipsum.
 
 Next we want to fix the obnoxiously large image but first we should review how elements relate to space with the **box model**.
 
-## Box Model (5 minutes / 2:30)
+## Box Model: I do (5 minutes / 2:30)
 
 The browser represents HTML elements on the page as blocks.
 Every block on the page has `width`, `height`, `padding`, `margin`, and `border` properties.
@@ -520,7 +532,7 @@ img {
 }
 ```
 
-### Centering Elements
+### Centering Elements: We do
 
 One thing to note is that by default, images are **inline elements** meaning they only take up as much space as they need.
 
@@ -571,7 +583,7 @@ html {
   background: #222;
 }
 ```
-We immidiately see the dark grey around the edges of the body.
+We immediately see the dark grey around the edges of the body.
 This is because body by default has margins of 8px.
 We can increase this using the same margin property we use on the `img`.
 
@@ -636,12 +648,12 @@ Frequently we will want more sub-containers for visual purposes.
 The generic block element used for these purposes is the `div`.
 We'll see more `div`s when we talk about using flex-box for advanced alignment.
 
-There are many many more CSS properties and nearly no limit to what CSS will let us do but these building blocks will take us a very long way. Check out the significant difference just these 25 lines (14 declarions) of CSS have made.
+There are many many more CSS properties and nearly no limit to what CSS will let us do but these building blocks will take us a very long way. Check out the significant difference just these 25 lines (14 declarations) of CSS have made.
 
 The best place to go from here is to practice.
 The following exercises and homework will be great for this but starting with your own wireframes, then building out the HTML and then adding CSS to create something totally new will be the best practice.
 
-## Importing Fonts (Bonus)
+## Importing Fonts: You do (Bonus)
 
 Google hosts a massive repository of fonts that can be imported for use on your page.
 
@@ -652,8 +664,8 @@ To add a font:
 4. Add the provided link element (something like `<link href="https://fonts.googleapis.com/css?family=Fresca" rel="stylesheet">`) to the head of your HTML.
 5. Add the provided declaration (something like `font-family: 'Fresca', sans-serif;`) to a CSS rule targeting the elements to which you would like to apply the font.
 
-## [Hippie Portfolio](https://github.com/ga-wdi-exercises/hippy-portfolio)
+## [Hippie Portfolio](https://git.generalassemb.ly/ga-wdi-exercises/hippy-portfolio)
 
-## Exercise: [Fashion Blog](https://github.com/ga-wdi-exercises/fashion-blog)
+## Exercise: [Fashion Blog](https://git.generalassemb.ly/ga-wdi-exercises/fashion-blog)
 
-## Homework: [Wendy Bite](https://github.com/ga-wdi-exercises/wendy_bite)
+## Homework: [Wendy Bite](https://git.generalassemb.ly/ga-wdi-exercises/wendy_bite)
