@@ -318,7 +318,11 @@ We use CSS to tell browsers how we would like for them to **paint** or display t
 
 ### Websites without CSS (5 minutes / 1:35)
 
-So far the website we've created together has no CSS and is a little plain.  Let's look at some websites and take away their CSS and see how dull and plain they become.  Note that the content will still be the same, just the *styling* will be different
+So far the website we've created together has no CSS and is a little plain.  Let's look at some websites and take away their CSS and see how dull and plain they become.  Note that the content will still be the same, just the *styling* will be different.  
+
+- Now lets checkout [CSS Zen Garden](http://www.csszengarden.com) to see some examples of the great power and diversity that CSS can have on a website.  
+
+>notice, you can use the web developer tools chrome add on to take away all css on a site
 
 ### CSS File: We do (5 minutes / 2:00)
 
