@@ -266,10 +266,10 @@ I've gone with `html5logo.png`.
 
 ![HTML5 Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png)
 
-Move the file from your Downloads folder to the `css-and-html` directory.
+Move the file from your Downloads folder to the `html-and-css` directory.
 
 ```bash
-mv ~/Downloads/html5logo.png ~/wdi/sandbox/css-and-html/
+mv ~/Downloads/html5logo.png ~/wdi/sandbox/html-and-css/
 ```
 
 We tell the browser to request an image and load it into the page by giving an image tag's source attribute a path to the image.
@@ -308,22 +308,26 @@ MDN list of block level HTML elements (https://developer.mozilla.org/en-US/docs/
 - 5 minutes working / 5 minutes discussing
 - [Solution](https://github.com/ga-wdi-exercises/html-css-in-class/blob/add-content/index.html)
 
-## Break (5 minutes / 1:50)
+----------------------Note: Timing is off, need to update total times-------------
+
+## Break (5 minutes / 1:30)
 
 ## CSS (Cascading Style Sheets)
 
 We use CSS to tell browsers how we would like for them to **paint** or display the elements of our document.
 
-### Websites without CSS (5 minutes / 1:55)
+### Websites without CSS (5 minutes / 1:35)
+
+So far the website we've created together has no CSS and is a little plain.  Let's look at some websites and take away their CSS and see how dull and plain they become.  Note that the content will still be the same, just the *styling* will be different
 
 ### CSS File: We do (5 minutes / 2:00)
 
 To get started writing styles we will create a new file.
 
 ```bash
-touch ~/wdi/sandbox/css-and-html/style.css
+touch ~/wdi/sandbox/html-and-css/style.css
 ```
-> notice, this is an absolute path, if you're in the `css-and-html` directory you can just `touch style.css`
+> notice, this is an absolute path, if you're in the `html-and-css` directory you can just `touch style.css`
 
 Then we will add a line to our HTML linking the stylesheet.
 
